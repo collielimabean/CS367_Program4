@@ -1,0 +1,93 @@
+
+Enter Command: 
+d
+# of employees in company tree: 26
+max levels in company tree: 5
+CEO: Mary
+
+Enter Command: 
+a 44,Mike,01/11/2014,Intern,20,Abi
+Employee added
+
+Enter Command: 
+a 45,Peter,01/12/2014,Sub Intern,25,Priya
+Employee added
+
+Enter Command: 
+d
+# of employees in company tree: 28
+max levels in company tree: 6
+CEO: Mary
+
+Enter Command: 
+c 22,Jessie
+Emily
+Arthur
+Mary
+
+Enter Command: 
+c 1,Mary 
+No Supervisor Chain found for the given employee!
+
+Enter Command: 
+c 48,Lily
+Incorrect employee name=id combination, provide correct details!
+Employee not found!
+
+Enter Command: 
+e Senior Engineer
+Sachin
+Harry
+Jeffrey
+Hope
+Abi
+
+Enter Command: 
+e Assistant
+Employee not found!
+
+Enter Command: 
+r 45,Peter
+Employee removed
+
+Enter Command: 
+r 1,Mary
+Incorrect operation, cannot remove CEO of the company!
+
+Enter Command: 
+s 22,Jessie
+Sachin
+
+Enter Command: 
+u 7,Samantha,77,Sara,01/13/2014,Manager
+Employee replaced
+
+Enter Command: 
+c 77,Sara
+Wyatt
+Mary
+
+Enter Command: 
+u 77,Sara,78,Archer,04/01/2014,Senior Engineer
+Invalid replace details provided, please provide correct matching title!
+
+Enter Command: 
+j 01/01/2004,01/31/2005
+Mary
+Arthur
+Emily
+Sachin
+Wyatt
+Hope
+Tom
+Ronald
+Emma
+Jessica
+
+Enter Command: 
+j 01/01/2013,02/01/2013
+Employee not found!
+
+Enter Command: 
+x
+exit
