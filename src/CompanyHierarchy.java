@@ -1,3 +1,17 @@
+///////////////////////////////////////////////////////////////////////////////
+// Main Class File:  CompanyHierarchyMain.java
+// File:             CompanyHierarchy.java
+// Semester:         CS367 Spring 2014
+//
+// Author:           Allen Hung <athung2@wisc.edu>
+// CS Login:         ahung
+// Lecturer's Name:  Professor Jim Skrentny
+//////////////////// PAIR PROGRAMMERS COMPLETE THIS SECTION ////////////////////
+// Pair Partner:     William Jen <wjen@wisc.edu>
+// CS Login:         jen
+// Lecturer's Name:  Professor Jim Skrentny
+//////////////////////////// 80 columns wide //////////////////////////////////
+
 import java.util.List;
 
 class CompanyHierarchy
@@ -32,7 +46,7 @@ class CompanyHierarchy
     }
 
     boolean addEmployee(Employee employee, int supervisorId,
-            String superVisorName)
+            String supervisorName)
     {
         // TODO Implement
         return true;

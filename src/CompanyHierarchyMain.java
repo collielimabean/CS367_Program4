@@ -1,29 +1,62 @@
-import java.util.*;
-import java.io.*;
+///////////////////////////////////////////////////////////////////////////////
+// Title:            CompanyHierarchyMain
+// Files:            BadConfigurationFileException.java, CompanyFileReader.java,
+//                   CompanyHierarchy.java, CompanyHierarchyMain.java
+// Semester:         CS367 Spring 2014
+//
+// Author:           Allen Hung
+// Email:            athung2@wisc.edu
+// CS Login:         ahung
+// Lecturer's Name:  Professor Jim Skrentny
+//
+//////////////////// PAIR PROGRAMMERS COMPLETE THIS SECTION ////////////////////
+// Pair Partner:     William Jen
+// Email:            wjen@wisc.edu
+// CS Login:         jen
+// Lecturer's Name:  Professor Jim Skrentny
+//////////////////////////// 80 columns wide //////////////////////////////////
 
+import java.util.Scanner;
+
+/**
+ * 
+ *
+ */
 public class CompanyHierarchyMain
 {
-
+    
+    /**
+     * 
+     * @param args
+     */
     public static void main(String[] args)
     {
-        // *** Step 1: Check whether exactly one command-line argument is given
-        // ***
-        // *** Add code for step1 here ***
-
-        // *** Step 2: Check whether the input file exists and is readable ***
-        // *** Add code for step2 here ***
-
-        /*
-         * Step 3: Load the data from the input file and use it to construct an
-         * company tree. Note: employees are to be added to the company tree in
-         * the order in which they appear in the text file.
-         */
-        // *** Add code for step3 here ***
-
-        /*
-         * Step 4: Prompt the user to enter command options and process them
-         * until the user types x for exit.
-         */
+        //check for one argument
+        if(args.length != 1)
+        {
+            System.out.println("Usage: java CompanyHierarchyMain FileName");
+            return;
+        }
+        
+        //read in file
+        CompanyFileReader reader = null;
+        
+        try
+        {
+            reader = new CompanyFileReader(args[0]);
+        }
+        
+        catch (BadConfigurationFileException e)
+        {
+            System.out.println("Error: Cannot access input file");
+            return;
+        }
+        
+        CompanyHierarchy hierarchy = reader.getCompanyHierarchyFromFile();
+        
+        boolean stop = false;
+        Scanner stdin = new Scanner(System.in);
+        
         while (!stop)
         {
             System.out.println("\nEnter Command: ");
@@ -41,48 +74,50 @@ public class CompanyHierarchyMain
 
                 switch (option)
                 {
-
-                case 'a':
-                    // *** Add code to implement this option ***
-                    break;
-
-                case 'c':
-                    // *** Add code to implement this option ***
-                    break;
-
-                case 'd':
-                    // *** Add code to implement this option ***
-                    break;
-
-                case 'e':
-                    // *** Add code to implement this option ***
-                    break;
-
-                case 'r':
-                    // *** Add code to implement this option ***
-                    break;
-
-                case 's':
-                    // *** Add code to implement this option ***
-                    break;
-
-                case 'u':
-                    // *** Add code to implement this option ***
-                    break;
-
-                case 'j':
-                    // *** Add code to implement this option ***
-                    break;
-
-                case 'x':
-                    stop = true;
-                    System.out.println("exit");
-                    break;
-
-                default:
-                    break;
+                    case 'a':
+                        //TODO Implement
+                        break;
+    
+                    case 'c':
+                        //TODO Implement
+                        break;
+    
+                    case 'd':
+                        //TODO Implement
+                        break;
+    
+                    case 'e':
+                        //TODO Implement
+                        break;
+    
+                    case 'r':
+                        //TODO Implement
+                        break;
+    
+                    case 's':
+                        //TODO Implement
+                        break;
+    
+                    case 'u':
+                        //TODO Implement
+                        break;
+    
+                    case 'j':
+                        //TODO Implement
+                        break;
+    
+                    case 'x':
+                        stop = true;
+                        System.out.println("exit");
+                        break;
+    
+                    default:
+                        break;
                 }
             }
         }
+        
+        //close the scanner to ensure no resource leak
+        stdin.close();
     }
 }

@@ -13,7 +13,7 @@ Olivia,10,13/05/2005,Senior Manager,Arthur,2
 Austin,11,06/15/2005,Engineer,Olivia,10
 Harry,12,06/15/2005,Senior Engineer,Olivia,10
 Bilbo,13,07/25/2005,Engineer,Olivia,10
-Hannah,14,09/17/2005,IT Engineer,Jessica
+Hannah,14,09/17/2005,IT Engineer,Jessica,9
 Lily,17,10/09/2005,Engineer,Hope,6
 Jeffrey,18,10/09/2005,Senior Engineer,Olivia,10
 Rebecca,19,02/04/2006,Engineer,Hope,6
