@@ -57,13 +57,19 @@ class CompanyHierarchy
         // TODO Implement
         return true;
     }
-
+    
     boolean removeEmployee(int id, String name)
     {
         // TODO Implement
         return true;
     }
 
+    boolean replaceEmployee(int id, String name, Employee newEmployee)
+    {
+        //TODO 
+        return true;
+    }
+    
     List<Employee> getEmployeeWithTitle(String title)
     {
         // TODO Implement
