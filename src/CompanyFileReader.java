@@ -106,7 +106,8 @@ public class CompanyFileReader
             input.close();
         } 
         
-        catch (NumberFormatException | FileNotFoundException e)
+        catch (NumberFormatException | FileNotFoundException
+                                     | CompanyHierarchyException e)
         {
             if(input != null)
                 input.close();
