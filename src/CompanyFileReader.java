@@ -86,28 +86,31 @@ public class CompanyFileReader
                 
                 int supervisorId = -1;
                 
+                //if the employee has a supervisor, set supervisorId
                 if(fields.length == 6)
                     supervisorId = Integer.parseInt(fields[5]);
                 
-                //if the employee has a supervisor, set supervisorId
-                if(supervisorId != -1)
+                //attempt to add to hierarchy
+                try
                 {
-                    hierarchy.addEmployee(e, supervisorId, fields[4]);
-                }
+                    if(supervisorId == -1)
+                        hierarchy.addEmployee(e, e.getId(), null);
+                    
+                    else 
+                        hierarchy.addEmployee(e, supervisorId, fields[4]);
+                }   
                 
-                //if the employee is the CEO
-                else
+                catch(CompanyHierarchyException companyException)
                 {
-                    hierarchy.addEmployee(e, e.getId(), null);
+                    System.out.println(companyException.getMessage());
+                    continue;
                 }
-                
             }
             
             input.close();
         } 
         
-        catch (NumberFormatException | FileNotFoundException
-                                     | CompanyHierarchyException e)
+        catch (NumberFormatException | FileNotFoundException e)
         {
             if(input != null)
                 input.close();

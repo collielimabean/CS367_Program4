@@ -33,7 +33,7 @@ public class CompanyHierarchyMain
      */
     public static void main(String[] args)
     {
-        //TODO Implement exception checks
+        //TODO Implement exception checks + fix existence checks
         //check for one argument
         if(args.length != 1)
         {
@@ -288,9 +288,7 @@ public class CompanyHierarchyMain
                         
                         //print out names
                         for(Employee e : emp_dates)
-                        {
                             System.out.println(e.getName());
-                        }
                         
                         break;
                     
