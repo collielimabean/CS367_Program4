@@ -37,10 +37,17 @@ class CompanyHierarchy
      */
     String getCEO()
     {
+<<<<<<< HEAD
         if(ceo == null)
             return null;
         
         return ceo.getEmployee().getName();
+=======
+        // TODO Implement
+    	// recursive method where you hunt with getSupervisor until throws null
+    	//base case return getEmployee(getName());
+        return null;
+>>>>>>> b22b81f81888448a0fbbd78b91a54624c2d11b5c
     }
     
     /**
@@ -49,7 +56,13 @@ class CompanyHierarchy
      */
     int getNumEmployees()
     {
+<<<<<<< HEAD
         return numItems;
+=======
+        // TODO Implement
+    	//involves using a getLeft and getRight recursion style
+        return 0;
+>>>>>>> b22b81f81888448a0fbbd78b91a54624c2d11b5c
     }
     
     /**
@@ -59,6 +72,11 @@ class CompanyHierarchy
     int getMaxLevels()
     {
         // TODO Implement
+    	if (not root)
+    		return 0;
+    	int leftSub = getMaxLevels(left subtree)
+    	int rightSub = getMaxLevels(right subtree)
+    	//there should be an adding of heights, but i don't really know where to implement it
         return 0;
     }
     
@@ -76,6 +94,8 @@ class CompanyHierarchy
             throw new IllegalArgumentException();
         
         // TODO Implement
+    	involve the left and right moving methods
+    	add check into recursive method
         return null;
     }
     
@@ -93,9 +113,13 @@ class CompanyHierarchy
     boolean addEmployee(Employee employee, int supervisorId,
             String supervisorName)
     {
+<<<<<<< HEAD
         if(employee == null || supervisorName == null)
             throw new IllegalArgumentException();
         
+=======
+    	//REHEAPIFY WHYYYYYYYY EW
+>>>>>>> b22b81f81888448a0fbbd78b91a54624c2d11b5c
         // TODO Implement
         return true;
     }
@@ -114,6 +138,7 @@ class CompanyHierarchy
             throw new IllegalArgumentException();
         
         // TODO Implement
+    	//left and right subtree recursion madness like the ones above
         return true;
     }
     
@@ -131,6 +156,7 @@ class CompanyHierarchy
             throw new IllegalArgumentException();
         
         // TODO Implement
+    	//reheapify, not even touching for now 
         return true;
     }
     
@@ -150,6 +176,7 @@ class CompanyHierarchy
             throw new IllegalArgumentException();
         
         //TODO 
+    	//left and right recursive searching followed by updateEmployee(newEmployee)
         return true;
     }
     
@@ -165,8 +192,11 @@ class CompanyHierarchy
             throw new IllegalArgumentException();
         
         // TODO Implement
+    	//left and right subtree recursion with data haul
+    	//.getemployee().getTitle()
         return null;
     }
+<<<<<<< HEAD
     
     /**
      * Gets all Employees who joined between the specified date range.
@@ -178,11 +208,17 @@ class CompanyHierarchy
      */
     List<Employee> getEmployeeInJoiningDateRate(String startDate
                                                     , String endDate)
+=======
+
+    List<Employee> getEmployeeInJoiningDateRate(String startDate,
+                                                     String endDate)
+>>>>>>> b22b81f81888448a0fbbd78b91a54624c2d11b5c
     {
         if(startDate == null || endDate == null)
             throw new IllegalArgumentException();
         
         //TODO Implement
+    	//same as above with an if statement enclosing the .getEmployee().getDateOfJoining()
         return null;
     }
     
@@ -201,6 +237,8 @@ class CompanyHierarchy
             throw new IllegalArgumentException();
         
         //TODO Implement
+    	//non-recursive search? followed by recursive back up to root with .getSupervisor()
+    	//base case is the root 
         return null;
     }
     
@@ -218,6 +256,7 @@ class CompanyHierarchy
             throw new IllegalArgumentException();
         
         //TODO Implement
+    	//does this mean all the ones on their same level or just everyone under the same parent?
         return null;
     }
     
