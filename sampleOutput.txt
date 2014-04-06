@@ -14,24 +14,39 @@ a 45,Peter,01/12/2014,Sub Intern,25,Priya
 Employee added
 
 Enter Command: 
+a 45,Alexander,01/13/2014,Intern,25,Priya
+Id already used!
+
+Enter Command: 
+a 47,Alexander,01/13/2014,Intern,26,Priya
+Incorrect supervisor name for id!
+
+Enter Command: 
+a 47,Alexander,01/13/2014,Intern,1000,XYZ
+Cannot add employee as supervisor was not found!
+
+Enter Command: 
 d
 # of employees in company tree: 28
 max levels in company tree: 6
 CEO: Mary
 
 Enter Command: 
-c 22,Jessie
+s 22,Jessie
 Emily
 Arthur
 Mary
 
 Enter Command: 
-c 1,Mary 
-No Supervisor Chain found for the given employee!
+s 1,Mary
+No Supervisor Chain found for that employee!
 
 Enter Command: 
-c 48,Lily
-Incorrect employee name=id combination, provide correct details!
+s 20,Lily
+Incorrect employee name for id!
+
+Enter Command: 
+s 100,XYZ
 Employee not found!
 
 Enter Command: 
@@ -52,24 +67,20 @@ Employee removed
 
 Enter Command: 
 r 1,Mary
-Incorrect operation, cannot remove CEO of the company!
-
-Enter Command: 
-s 22,Jessie
-Sachin
+Cannot remove CEO of the company!
 
 Enter Command: 
 u 7,Samantha,77,Sara,01/13/2014,Manager
 Employee replaced
 
 Enter Command: 
-c 77,Sara
+s 77,Sara
 Wyatt
 Mary
 
 Enter Command: 
 u 77,Sara,78,Archer,04/01/2014,Senior Engineer
-Invalid replace details provided, please provide correct matching title!
+Replacement title does not match existing title!
 
 Enter Command: 
 j 01/01/2004,01/31/2005
@@ -87,6 +98,10 @@ Jessica
 Enter Command: 
 j 01/01/2013,02/01/2013
 Employee not found!
+
+Enter Command: 
+j 1/2,2/1
+Date parsing failed!
 
 Enter Command: 
 x
