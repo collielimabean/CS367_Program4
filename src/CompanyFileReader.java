@@ -94,7 +94,7 @@ public class CompanyFileReader
                 try
                 {
                     if(supervisorId == -1)
-                        hierarchy.addEmployee(e, e.getId(), null);
+                        hierarchy.addEmployee(e, 0, null);
                     
                     else 
                         hierarchy.addEmployee(e, supervisorId, fields[4]);

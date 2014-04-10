@@ -145,7 +145,7 @@ class CompanyHierarchy
      */
     Employee getEmployee(int id, String name)
     {
-        if (name == null)
+        if (name == null || id < 0)
             throw new IllegalArgumentException();
 
         return getEmployee(ceo, id, name).getEmployee();
@@ -206,7 +206,7 @@ class CompanyHierarchy
     boolean addEmployee(Employee employee, int supervisorId,
             String supervisorName)
     {
-        if (employee == null)
+        if (employee == null || supervisorId < 0)
             throw new IllegalArgumentException();
 
         else if (ceo.getEmployee() == null && supervisorName == null)
@@ -270,7 +270,7 @@ class CompanyHierarchy
      */
     boolean contains(int id, String name)
     {
-        if (name == null)
+        if (name == null || id < 0)
             throw new IllegalArgumentException();
 
         return contains(ceo, id, name);
@@ -324,7 +324,7 @@ class CompanyHierarchy
      */
     boolean removeEmployee(int id, String name)
     {
-        if (name == null)
+        if (name == null || id < 0)
             throw new IllegalArgumentException();
 
         TreeNode terminate = getEmployee(ceo, id, name);
@@ -365,7 +365,7 @@ class CompanyHierarchy
      */
     boolean replaceEmployee(int id, String name, Employee newEmployee)
     {
-        if (name == null || newEmployee == null)
+        if (name == null || newEmployee == null || id < 0)
             throw new IllegalArgumentException();
 
         TreeNode employeeNode = getEmployee(ceo, id, name);
@@ -509,7 +509,7 @@ class CompanyHierarchy
      */
     List<Employee> getSupervisorChain(int id, String name)
     {
-        if (name == null)
+        if (name == null || id < 0)
             throw new IllegalArgumentException();
 
         TreeNode employeeNode = getEmployee(ceo, id, name);
@@ -553,7 +553,7 @@ class CompanyHierarchy
      */
     List<Employee> getCoWorkers(int id, String name)
     {
-        if (name == null)
+        if (name == null || id < 0)
             throw new IllegalArgumentException();
 
         // get TreeNode associated with specified id and name
