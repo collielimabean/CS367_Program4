@@ -103,7 +103,8 @@ public class CompanyFileReader
                 catch(CompanyHierarchyException companyException)
                 {
                     System.out.println(companyException.getMessage());
-                    continue;
+                    input.close();
+                    System.exit(1); //abnormal exit
                 }
             }
             
