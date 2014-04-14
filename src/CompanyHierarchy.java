@@ -42,6 +42,9 @@ class CompanyHierarchy
     /** Exception message when a remove operation attempts to remove the CEO. */
     private static final String CEO_REMOVAL_ATTEMPT = "Cannot remove CEO of the company!";
 
+    /** Exception message when a replacement employee that already exists. */
+    private static final String REPLACEMENT_ALREADY_EXISTS = "Replacing employee already exists on the Company Tree!";
+    
     /**
      * Exception message when a replacement employee does not have the same
      * title as the old employee.
@@ -367,14 +370,30 @@ class CompanyHierarchy
     {
         if (name == null || newEmployee == null || id < 0)
             throw new IllegalArgumentException();
-
+        
+        // ensure that the tree contains the to-be replaced employee
+        if(!contains(id, name))
+            return false;
+        
+        // check to see if new employee already exists within the tree
+        boolean idMatch = false;
+        
+        try
+        {
+            idMatch = contains(newEmployee.getId(), newEmployee.getName());
+        }
+        
+        catch (CompanyHierarchyException e)
+        {
+            throw new CompanyHierarchyException(ID_IN_USE);
+        }
+        
+        if (idMatch)
+            throw new CompanyHierarchyException(REPLACEMENT_ALREADY_EXISTS);
+        
         TreeNode employeeNode = getEmployee(ceo, id, name);
         Employee employee = employeeNode.getEmployee();
-
-        // if employee is null, means that no such employee exists
-        if (employee == null)
-            return false;
-
+        
         if (!employee.getTitle().equals(newEmployee.getTitle()))
             throw new CompanyHierarchyException(REPLACE_TITLE_MISMATCH);
 
