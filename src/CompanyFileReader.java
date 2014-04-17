@@ -94,7 +94,7 @@ public class CompanyFileReader
                 try
                 {
                     if(supervisorId == -1)
-                        hierarchy.addEmployee(e, e.getId(), null);
+                        hierarchy.addEmployee(e, 0, null);
                     
                     else 
                         hierarchy.addEmployee(e, supervisorId, fields[4]);
@@ -103,7 +103,8 @@ public class CompanyFileReader
                 catch(CompanyHierarchyException companyException)
                 {
                     System.out.println(companyException.getMessage());
-                    continue;
+                    input.close();
+                    System.exit(1); //abnormal exit
                 }
             }
             

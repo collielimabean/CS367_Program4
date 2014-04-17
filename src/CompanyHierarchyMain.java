@@ -302,6 +302,7 @@ public class CompanyHierarchyMain
                         break;
 
                     default:
+                        System.out.println("ïnvalid command");
                         break;
                     }
                 }
