@@ -25,13 +25,15 @@ import java.util.List;
 class CompanyHierarchy
 {
     /** Exception message when an incorrect name and id pair is detected. */
-    private static final String INCORRECT_NAME_ID_PAIR = "Incorrect employee name for id!";
+    private static final String INCORRECT_NAME_ID_PAIR 
+                                        = "Incorrect employee name for id!";
 
     /**
      * Exception message when an incorrect supervisor name and id pair is
      * detected
      */
-    private static final String INCORRECT_SUPERVISOR_ID = "Incorrect supervisor name for id!";
+    private static final String INCORRECT_SUPERVISOR_ID 
+                                        = "Incorrect supervisor name for id!";
 
     /**
      * Exception message when an add operation attempts to add an employee with
@@ -40,22 +42,26 @@ class CompanyHierarchy
     private static final String ID_IN_USE = "Id already used!";
 
     /** Exception message when a remove operation attempts to remove the CEO. */
-    private static final String CEO_REMOVAL_ATTEMPT = "Cannot remove CEO of the company!";
+    private static final String CEO_REMOVAL_ATTEMPT 
+                                        = "Cannot remove CEO of the company!";
 
     /** Exception message when a replacement employee that already exists. */
-    private static final String REPLACEMENT_ALREADY_EXISTS = "Replacing employee already exists on the Company Tree!";
+    private static final String REPLACEMENT_ALREADY_EXISTS 
+                    = "Replacing employee already exists on the Company Tree!";
     
     /**
      * Exception message when a replacement employee does not have the same
      * title as the old employee.
      */
-    private static final String REPLACE_TITLE_MISMATCH = "Replacement title does not match existing title!";
+    private static final String REPLACE_TITLE_MISMATCH 
+                        = "Replacement title does not match existing title!";
 
     /** Exception message when passed in dates are unable to parsed. */
     private static final String DATE_PARSE_ERROR = "Date parsing failed!";
 
     /** Exception message when an employee does not have a supervisor chain. */
-    private static final String NO_SUPERVISOR_CHAIN = "No Supervisor Chain found for that employee!";
+    private static final String NO_SUPERVISOR_CHAIN 
+                            = "No Supervisor Chain found for that employee!";
 
     /** Format for dates in CompanyHierarchy: Month/Day/Year */
     private static final String DATE_FORMAT = "MM/dd/yyyy";
