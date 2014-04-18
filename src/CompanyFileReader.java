@@ -79,8 +79,13 @@ public class CompanyFileReader
                     return false;
                 }
                 
+                int employeeID = Integer.parseInt(fields[1]);
+                
+                if(employeeID < 0)
+                    throw new IllegalArgumentException();
+                
                 Employee e = new Employee(fields[0]
-                                            , Integer.parseInt(fields[1])
+                                            , employeeID
                                             , fields[2]
                                             , fields[3]);
                 
@@ -88,7 +93,12 @@ public class CompanyFileReader
                 
                 //if the employee has a supervisor, set supervisorId
                 if(fields.length == 6)
+                {
                     supervisorId = Integer.parseInt(fields[5]);
+                    
+                    if(supervisorId < 0)
+                        throw new IllegalArgumentException();
+                }
                 
                 //attempt to add to hierarchy
                 try
