@@ -645,10 +645,7 @@ class CompanyHierarchy
             
             // if start comes before the specified date AND
             // if the end date comes after the specified date
-            if (start.compareTo(check) <= 0 && end.compareTo(check) >= 0)
-                return true;
-
-            return false;
+            return (start.compareTo(check) <= 0 && end.compareTo(check) >= 0);
         }
     }
 
