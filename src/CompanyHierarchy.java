@@ -85,10 +85,7 @@ class CompanyHierarchy
      */
     String getCEO()
     {
-        if (ceo.getEmployee() == null)
-            return null;
-
-        return ceo.getEmployee().getName();
+        return (ceo.getEmployee() == null) ? null : ceo.getEmployee().getName();
     }
 
     /**
@@ -157,7 +154,9 @@ class CompanyHierarchy
         if (name == null || id < 0)
             throw new IllegalArgumentException();
 
-        return getEmployee(ceo, id, name).getEmployee();
+        TreeNode query = getEmployee(ceo, id, name);
+        
+        return (query == null) ? null : query.getEmployee();
     }
 
     /**
