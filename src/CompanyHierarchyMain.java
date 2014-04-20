@@ -134,23 +134,22 @@ public class CompanyHierarchyMain
 
                         Employee freshMeat = new Employee(a_data[1], e_id,
                                 a_data[2], a_data[3]);
-
-                        if (hierarchy.getEmployee(freshMeat.getId(),
-                                freshMeat.getName()) != null)
-                        {
-                            System.out.println("Employee already exists!");
-                            break;
-                        }
-
+                        
                         boolean added = hierarchy.addEmployee(freshMeat,
                                 supervisor_id, a_data[5]);
 
                         if (added)
                             System.out.println("Employee added");
 
-                        else
-                            System.out.println("Cannot add employee as"
-                                    + " supervisor was not found!");
+                        else if (hierarchy.getEmployee(freshMeat.getId(),
+                                    freshMeat.getName()) != null)
+                        {
+                            System.out.println("Employee already exists!");
+                            break;
+                        }
+                        
+                        else System.out.println("Cannot add employee as"
+                                            + " supervisor was not found!");
 
                         break;
 
