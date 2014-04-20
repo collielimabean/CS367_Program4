@@ -29,28 +29,28 @@ public class CompanyHierarchyMain
      * Regular expression for the add command [int, String, String, String, int,
      * String]
      */
-    public static final String a_regex = "^\\d*,.*,.*,.*,\\d*,.*";
+    public static final String a_regex = "^ *\\d*,.*,.*,.*, *\\d*,.*";
 
     /**
      * Regular expression for the get co-workers command [int, String]
      */
-    public static final String c_regex = "^\\d*,.*";
+    public static final String c_regex = "^ *\\d*,.*";
 
     /**
      * Regular expression for the remove command [int, String]
      */
-    public static final String r_regex = "^\\d*,.*";
+    public static final String r_regex = "^ *\\d*,.*";
 
     /**
      * Regular expression for the "get supervisor chain" command [int, String]
      */
-    public static final String s_regex = "^\\d*,.*";
+    public static final String s_regex = "^ *\\d*,.*";
 
     /**
      * Regular expression for the replace command [int, String, int, String,
      * String, String]
      */
-    public static final String u_regex = "^\\d*,.*,\\d*,.*,.*,.*";
+    public static final String u_regex = "^ *\\d*,.*,\\d*,.*,.*,.*";
 
     /**
      * Removes all trailing whitespace in a array of Strings
