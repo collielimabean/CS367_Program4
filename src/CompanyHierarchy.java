@@ -67,7 +67,7 @@ class CompanyHierarchy
     private static final String DATE_FORMAT = "MM/dd/yyyy";
 
     private TreeNode ceo;
-    private int numItems;
+    private int numEmployees;
 
     /**
      * Initializes a CompanyHierarchy object.
@@ -75,7 +75,7 @@ class CompanyHierarchy
     CompanyHierarchy()
     {
         ceo = new TreeNode(null, null);
-        numItems = 0;
+        numEmployees = 0;
     }
 
     /**
@@ -95,7 +95,7 @@ class CompanyHierarchy
      */
     int getNumEmployees()
     {
-        return numItems;
+        return numEmployees;
     }
 
     /**
@@ -220,11 +220,11 @@ class CompanyHierarchy
         else if (ceo.getEmployee() == null && supervisorName == null)
         {
             ceo.updateEmployee(employee);
-            numItems++;
+            numEmployees++;
             return true;
         }
 
-        else if (supervisorName == null)
+        else if (supervisorName == null || supervisorId < 0)
             throw new IllegalArgumentException();
 
         // if the list already contains employee, then return false
@@ -252,7 +252,7 @@ class CompanyHierarchy
 
             // add to given supervisor
             supervisor.addWorker(new TreeNode(employee, supervisor));
-            numItems++;
+            numEmployees++;
         }
 
         catch (CompanyHierarchyException e)
@@ -350,9 +350,14 @@ class CompanyHierarchy
             node.updateSupervisor(supervisor);
             supervisor.addWorker(node);
         }
-
+        
         // remove the employee
-        return supervisor.getWorker().remove(terminate);
+        boolean success = supervisor.getWorker().remove(terminate);
+        
+        if(success)
+            numEmployees--;
+
+        return success;
     }
 
     /**
@@ -583,9 +588,10 @@ class CompanyHierarchy
         // get TreeNode associated with specified id and name
         TreeNode employeeNode = getEmployee(ceo, id, name);
 
-        if (employeeNode.getEmployee() == null)
+        if (employeeNode.getEmployee() == null 
+                    || employeeNode.getSupervisor() == null)
             return null;
-
+        
         // coworkers are those on the same level (i.e. supervisor's children)
         List<TreeNode> coworkerNode = employeeNode.getSupervisor().getWorker();
         List<Employee> coworkers = new ArrayList<Employee>();
